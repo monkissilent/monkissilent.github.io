@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vineeth Chaini | Digital Marketing & Performance Marketing</title>
+  <meta name="description" content="Digital Marketing professional specializing in Google Ads, Meta Ads, SEO, analytics and performance marketing.">
+  <meta name="author" content="Vineeth Chaini">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface-2: #171717;
+      --text: #f5f5f5;
+      --muted: #a3a3a3;
+      --accent: #7c3aed;
+      --accent-2: #a78bfa;
+      --border: #262626;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(10, 10, 10, 0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent-2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at 75% 25%, rgba(124,58,237,0.18), transparent 30%),
+        radial-gradient(circle at 20% 70%, rgba(124,58,237,0.08), transparent 28%);
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      max-width: 900px;
+      font-size: clamp(3rem, 7vw, 6.4rem);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    h1 span {
+      color: var(--accent-2);
+    }
+
+    .hero-description {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.18rem;
+      margin-bottom: 36px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button.primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.12);
+    }
+
+    .button.secondary:hover {
+      background: var(--surface-2);
+    }
+
+    /* STATS */
+
+    .stats {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 42px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -2px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+
+    .about-highlight {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(145deg, #111, #0d0d0d);
+    }
+
+    .about-highlight h3 {
+      margin-bottom: 18px;
+    }
+
+    .about-highlight ul {
+      list-style: none;
+      color: var(--muted);
+    }
+
+    .about-highlight li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-highlight li:last-child {
+      border-bottom: 0;
+    }
+
+    /* CASE STUDIES */
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .case-card {
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      transition: 0.25s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-5px);
+      border-color: #444;
+    }
+
+    .case-number {
+      color: var(--accent-2);
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .case-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+    }
+
+    .case-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .case-results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 7px;
+      background: var(--surface-2);
+      color: #d4d4d4;
+      font-size: 0.78rem;
+      border: 1px solid var(--border);
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 12px 17px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      color: #ddd;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      padding-bottom: 130px;
+    }
+
+    .contact h2 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .contact p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .stat-number {
+        font-size: 1.7rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 100px 0 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">Vineeth<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+    <div class="container">
+
+      <div class="eyebrow">
+        Digital Marketing · Performance Marketing
+      </div>
+
+      <h1>
+        Turning <span>marketing data</span>
+        into business growth.
+      </h1>
+
+      <p class="hero-description">
+        Digital Marketing professional specializing in Google Ads, Meta Ads,
+        SEO, analytics, email marketing and conversion-focused growth
+        strategies for startups and SaaS businesses.
+      </p>
+
+      <div class="buttons">
+        <a href="#work" class="button primary">View My Work</a>
+        <a href="#contact" class="button secondary">Let's Connect</a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- STATS -->
+
+  <section class="stats">
+    <div class="container stats-grid">
+
+      <div>
+        <div class="stat-number">₹5L+</div>
+        <div class="stat-label">Paid Media Budget Managed</div>
+      </div>
+
+      <div>
+        <div class="stat-number">10.5K+</div>
+        <div class="stat-label">Registrations Generated</div>
+      </div>
+
+      <div>
+        <div class="stat-number">30.8K+</div>
+        <div class="stat-label">Ad Clicks</div>
+      </div>
+
+      <div>
+        <div class="stat-number">64%</div>
+        <div class="stat-label">Email Open Rate</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">About Me</div>
+        <h2>Marketing with a numbers-first mindset.</h2>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            I work at the intersection of digital marketing, analytics and
+            business growth — building campaigns that are designed to be
+            measurable, testable and scalable.
+          </p>
+
+          <p>
+            My experience spans paid acquisition, SEO, email marketing,
+            analytics, conversion optimization and marketing operations,
+            with a particular focus on startup and SaaS environments.
+          </p>
+
+          <p>
+            I believe great marketing isn't just about generating traffic.
+            It's about understanding what happens after the click.
+          </p>
+
+        </div>
+
+        <div class="about-highlight">
+
+          <h3>What I Bring</h3>
+
+          <ul>
+            <li>Performance-focused campaign strategy</li>
+            <li>Google Ads & Meta Ads management</li>
+            <li>GA4 & marketing analytics</li>
+            <li>SEO & organic growth</li>
+            <li>Email marketing & lifecycle campaigns</li>
+            <li>Conversion optimization</li>
+            <li>Marketing reporting & attribution</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CASE STUDIES -->
+
+  <section id="work">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Selected Work</div>
+        <h2>Results over vanity metrics.</h2>
+        <p>
+          A selection of marketing initiatives focused on acquisition,
+          conversion and measurable business outcomes.
+        </p>
+      </div>
+
+
+      <div class="case-grid">
+
+        <article class="case-card">
+
+          <div class="case-number">01 · GOOGLE ADS</div>
+
+          <h3>Search Acquisition Campaign</h3>
+
+          <p>
+            Designed and managed Google Search campaigns focused on
+            registrations and conversion efficiency across Indian and
+            international audiences.
+          </p>
+
+          <div class="case-results">
+            <span class="tag">30.8K+ Clicks</span>
+            <span class="tag">14.1K+ Conversions</span>
+            <span class="tag">10.5K+ Registrations</span>
+            <span class="tag">₹2.58 India CPC</span>
+          </div>
+
+        </article>
+
+
+        <article class="case-card">
+
+          <div class="case-number">02 · META ADS</div>
+
+          <h3>Paid Social Growth</h3>
+
+          <p>
+            Developed Meta advertising campaigns designed to build
+            awareness, generate qualified traffic and support user
+            acquisition for a startup environment.
+          </p>
+
+          <div class="case-results">
+            <span class="tag">1.42M+ Impressions</span>
+            <span class="tag">Paid Acquisition</span>
+            <span class="tag">Audience Testing</span>
+          </div>
+
+        </article>
+
+
+        <article class="case-card">
+
+          <div class="case-number">03 · EMAIL MARKETING</div>
+
+          <h3>Lifecycle & Email Campaigns</h3>
+
+          <p>
+            Built email campaigns across registered and cold audiences,
+            combining segmentation, persuasive copy and deliverability
+            fundamentals.
+          </p>
+
+          <div class="case-results">
+            <span class="tag">64% Open Rate</span>
+            <span class="tag">12% CTR</span>
+            <span class="tag">SPF</span>
+            <span class="tag">DKIM</span>
+            <span class="tag">DMARC</span>
+          </div>
+
+        </article>
+
+
+        <article class="case-card">
+
+          <div class="case-number">04 · SEO & ANALYTICS</div>
+
+          <h3>Website Growth & Measurement</h3>
+
+          <p>
+            Worked on website optimization, technical SEO, search research
+            and analytics implementation to create a stronger measurement
+            foundation for marketing decisions.
+          </p>
+
+          <div class="case-results">
+            <span class="tag">GA4</span>
+            <span class="tag">GSC</span>
+            <span class="tag">Screaming Frog</span>
+            <span class="tag">Ahrefs</span>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Skills & Tools</div>
+        <h2>The marketing stack.</h2>
+      </div>
+
+      <div class="skills">
+
+        <span class="skill">Google Ads</span>
+        <span class="skill">Meta Ads</span>
+        <span class="skill">GA4</span>
+        <span class="skill">Google Search Console</span>
+        <span class="skill">SEO</span>
+        <span class="skill">Email Marketing</span>
+        <span class="skill">Conversion Optimization</span>
+        <span class="skill">Google Tag Manager</span>
+        <span class="skill">Microsoft Clarity</span>
+        <span class="skill">PostHog</span>
+        <span class="skill">Screaming Frog</span>
+        <span class="skill">Ahrefs</span>
+        <span class="skill">Google Sheets</span>
+        <span class="skill">Marketing Analytics</span>
+        <span class="skill">Performance Marketing</span>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+      <div class="eyebrow">Let's Work Together</div>
+
+      <h2>Have a growth problem?</h2>
+
+      <p>
+        I'm open to opportunities in Digital Marketing, Performance Marketing,
+        Google Ads, Meta Ads and growth-focused marketing roles.
+      </p>
+
+      <div class="buttons" style="justify-content:center;">
+
+        <!-- Replace these links with your actual profiles -->
+
+        <a
+          href="https://www.linkedin.com/"
+          target="_blank"
+          class="button primary">
+          LinkedIn
+        </a>
+
+        <a
+          href="mailto:YOUR_EMAIL@example.com"
+          class="button secondary">
+          Email Me
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 Vineeth Chaini
+      </div>
+
+      <div>
+        Digital Marketing · Performance Marketing
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
