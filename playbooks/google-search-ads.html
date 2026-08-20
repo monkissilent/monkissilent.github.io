@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Google Search Ads Playbook | Vineeth Chaini</title>
+  <meta name="description" content="Google Search Ads Playbook by Vineeth Chaini — a two-phase, intent-driven acquisition strategy built around disciplined budget management, search intent, conversion optimisation and measurement.">
+
+  <style>
+    :root {
+      --bg: #080808;
+      --surface: #101010;
+      --surface-2: #151515;
+      --text: #f5f5f5;
+      --muted: #a1a1aa;
+      --accent: #a78bfa;
+      --accent-2: #c4b5fd;
+      --border: rgba(255,255,255,.09);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(circle at 80% 5%, rgba(139,92,246,.16), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,8,8,.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.4px;
+    }
+
+    .brand span { color: var(--accent-2); }
+
+    .back {
+      color: var(--muted);
+      font-size: .88rem;
+      transition: .2s ease;
+    }
+
+    .back:hover { color: white; }
+
+    .hero {
+      padding: 115px 0 95px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      max-width: 920px;
+      font-size: clamp(3rem, 7vw, 6.7rem);
+      line-height: .95;
+      letter-spacing: -5px;
+      margin-bottom: 28px;
+    }
+
+    h1 span { color: var(--accent-2); }
+
+    .hero-copy {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 1.14rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 30px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.035);
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: #d4d4d8;
+      font-size: .78rem;
+    }
+
+    section { padding: 100px 0; }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* Result strip */
+    .results {
+      margin-top: -1px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .result {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+    }
+
+    .result strong {
+      display: block;
+      font-size: 2rem;
+      letter-spacing: -1px;
+    }
+
+    .result span {
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    /* STAR */
+    .star-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .star-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+    }
+
+    .star-letter {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: rgba(139,92,246,.13);
+      color: var(--accent-2);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .star-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .star-card p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* Framework */
+    .framework {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .phase {
+      position: relative;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #121212, #0c0c0c);
+      transition: transform .3s ease, border-color .3s ease;
+    }
+
+    .phase:hover {
+      transform: translateY(-6px);
+      border-color: rgba(167,139,250,.4);
+    }
+
+    .phase-number {
+      color: var(--accent-2);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
+    }
+
+    .phase h3 {
+      font-size: 1.65rem;
+      margin-bottom: 10px;
+    }
+
+    .phase p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .phase ul {
+      list-style: none;
+    }
+
+    .phase li {
+      padding: 8px 0;
+      color: #d4d4d8;
+      border-top: 1px solid var(--border);
+      font-size: .9rem;
+    }
+
+    .phase li::before {
+      content: "→";
+      color: var(--accent-2);
+      margin-right: 9px;
+    }
+
+    .flow {
+      margin: 35px 0 0;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: var(--accent-2);
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: .5px;
+      background: rgba(139,92,246,.05);
+    }
+
+    /* Optimization */
+    .rules {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .rule {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--surface);
+    }
+
+    .rule h3 { margin-bottom: 9px; font-size: 1.05rem; }
+    .rule p { color: var(--muted); font-size: .88rem; }
+
+    /* Stack */
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .tool {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+
+    .tool h3 { margin-bottom: 8px; }
+    .tool p { color: var(--muted); font-size: .86rem; }
+
+    /* Quote */
+    .quote {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    blockquote {
+      max-width: 900px;
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    cite {
+      display: block;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: .85rem;
+      font-style: normal;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 110px 0;
+    }
+
+    .cta h2 { max-width: 850px; margin: 0 auto 18px; }
+    .cta p { color: var(--muted); max-width: 650px; margin: 0 auto 30px; }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      padding: 13px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-weight: 750;
+      transition: .25s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button:hover { transform: translateY(-3px); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: #71717a;
+      font-size: .78rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 850px) {
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .star-grid,
+      .framework { grid-template-columns: 1fr; }
+      .rules,
+      .stack { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 90px 0 75px; }
+      h1 { letter-spacing: -3px; }
+      section { padding: 75px 0; }
+      .results-grid,
+      .rules,
+      .stack { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="https://monkissilent.github.io/">Vineeth<span>.</span></a>
+      <a class="back" href="https://monkissilent.github.io/">← Back to Portfolio</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow">Performance Marketing Playbook 01 · Google Search Ads</div>
+
+      <h1>
+        From Search Intent to
+        <span>10.5K+ Registrations.</span>
+      </h1>
+
+      <p class="hero-copy">
+        A two-phase, intent-driven Google Search strategy designed to maximise
+        user acquisition efficiency within a disciplined ₹500/day operating budget.
+        The framework separated search-intent discovery from high-efficiency
+        registration scaling.
+      </p>
+
+      <div class="hero-tags">
+        <span class="tag">Google Search Ads</span>
+        <span class="tag">Keyword Strategy</span>
+        <span class="tag">Conversion Optimisation</span>
+        <span class="tag">GA4</span>
+        <span class="tag">GTM</span>
+        <span class="tag">Microsoft Clarity</span>
+        <span class="tag">PostHog</span>
+        <span class="tag">GSC</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="results">
+    <div class="container results-grid">
+
+      <div class="result reveal">
+        <strong>₹3L+</strong>
+        <span>Aggregate budget managed</span>
+      </div>
+
+      <div class="result reveal">
+        <strong>30.8K+</strong>
+        <span>Targeted ad clicks</span>
+      </div>
+
+      <div class="result reveal">
+        <strong>14.1K+</strong>
+        <span>Total conversion signals</span>
+      </div>
+
+      <div class="result reveal">
+        <strong>10.5K+</strong>
+        <span>Website registrations</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <div class="eyebrow">The Challenge</div>
+        <h2>Grow qualified acquisition without wasting the budget.</h2>
+        <p>
+          MNF.ai needed to accelerate qualified filmmaker registrations while
+          operating within a strict ₹500/day budget ceiling and simultaneously
+          learning how its audience actually searched for the product.
+        </p>
+      </div>
+
+      <div class="star-grid">
+
+        <article class="star-card reveal">
+          <div class="star-letter">S</div>
+          <h3>Situation</h3>
+          <p>
+            MNF.ai, an AI-powered SaaS platform for filmmakers, needed a
+            measurable search-acquisition engine capable of generating
+            qualified registrations under a disciplined daily budget.
+          </p>
+        </article>
+
+        <article class="star-card reveal">
+          <div class="star-letter">T</div>
+          <h3>Task</h3>
+          <p>
+            Identify genuine filmmaker search intent, turn validated demand
+            into efficient registration opportunities, and continuously
+            improve performance as conversion data matured.
+          </p>
+        </article>
+
+        <article class="star-card reveal">
+          <div class="star-letter">A</div>
+          <h3>Action</h3>
+          <p>
+            Built a two-phase intent framework: first discover real search
+            behaviour using structured Broad Match and Search Terms Reports;
+            then extract validated winners into Exact and Phrase Match
+            campaigns while dynamically reallocating budget and tuning bids.
+          </p>
+        </article>
+
+        <article class="star-card reveal">
+          <div class="star-letter">R</div>
+          <h3>Result</h3>
+          <p>
+            Managed ₹3L+ in aggregate spend, delivered 30,800+ targeted ad
+            clicks, logged 14,100+ total conversion signals and generated
+            10.5K+ website registrations.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="background: linear-gradient(180deg, rgba(139,92,246,.035), transparent);">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <div class="eyebrow">The Framework</div>
+        <h2>Discover first. Scale what proves itself.</h2>
+        <p>
+          The strategy intentionally separated exploration from efficiency,
+          allowing the campaign to learn from real search behaviour before
+          concentrating budget on validated demand.
+        </p>
+      </div>
+
+      <div class="framework">
+
+        <article class="phase reveal">
+          <div class="phase-number">PHASE 01 · INTENT DISCOVERY</div>
+          <h3>Mine real search behaviour.</h3>
+          <p>
+            The objective was to understand what people actually searched for,
+            rather than assuming high-volume keywords automatically represented
+            valuable demand.
+          </p>
+
+          <ul>
+            <li>Structured Broad Match keywords</li>
+            <li>Tightly themed ad-group structures</li>
+            <li>Daily Search Terms Report analysis</li>
+            <li>Aggressive negative-keyword additions</li>
+          </ul>
+        </article>
+
+        <article class="phase reveal">
+          <div class="phase-number">PHASE 02 · SCALE & OPTIMISE</div>
+          <h3>Concentrate spend on validated intent.</h3>
+          <p>
+            Once winning keyword signals were identified, they were moved into
+            high-performance buckets designed for more controlled registration
+            acquisition.
+          </p>
+
+          <ul>
+            <li>Exact and Phrase Match deployment</li>
+            <li>Broad Match retained as a discovery layer</li>
+            <li>Dynamic allocation toward top-performing assets</li>
+            <li>Optimisation against registration-cost trends</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <div class="flow reveal">
+        DISCOVER → VALIDATE → OPTIMISE → SCALE
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <div class="eyebrow">Bidding & Budget Management</div>
+        <h2>A bidding lifecycle built around data maturity.</h2>
+        <p>
+          Bidding was continuously tuned as the campaign accumulated stronger
+          signals, rather than treating the initial bidding configuration as
+          permanent.
+        </p>
+      </div>
+
+      <div class="rules">
+
+        <article class="rule reveal">
+          <h3>₹500/day allocation</h3>
+          <p>
+            Maintained a disciplined daily spending framework throughout execution.
+          </p>
+        </article>
+
+        <article class="rule reveal">
+          <h3>Start with learning</h3>
+          <p>
+            Initiated with Maximise Clicks to populate learning cohorts rapidly.
+          </p>
+        </article>
+
+        <article class="rule reveal">
+          <h3>Move toward efficiency</h3>
+          <p>
+            Transitioned bidding goals toward registration-cost optimisation as
+            conversion data matured.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #0b0b0b;">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <div class="eyebrow">Core Optimisation Rules</div>
+        <h2>Protect intent. Improve relevance. Remove friction.</h2>
+      </div>
+
+      <div class="rules">
+
+        <article class="rule reveal">
+          <h3>Search-only networks</h3>
+          <p>
+            Avoided Search Partner and Display expansion networks to enforce
+            stricter user-intent filtering.
+          </p>
+        </article>
+
+        <article class="rule reveal">
+          <h3>Intent-match hygiene</h3>
+          <p>
+            Conducted aggressive weekly Search Terms reviews and added negative
+            entries to prevent budget leakage.
+          </p>
+        </article>
+
+        <article class="rule reveal">
+          <h3>Creative & landing tuning</h3>
+          <p>
+            Continuously tested ad variants and aligned query intent with
+            specific product messaging.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <div class="eyebrow">Measurement & Growth Infrastructure</div>
+        <h2>Paid media performance doesn't exist in isolation.</h2>
+        <p>
+          The acquisition framework was supported by behavioural analytics and
+          conversion tracking so that campaign performance could be evaluated
+          beyond clicks alone.
+        </p>
+      </div>
+
+      <div class="stack">
+
+        <article class="tool reveal">
+          <h3>GA4 & GTM</h3>
+          <p>
+            Granular conversion-event triggers to monitor deep-funnel website
+            signups and behaviours.
+          </p>
+        </article>
+
+        <article class="tool reveal">
+          <h3>Microsoft Clarity</h3>
+          <p>
+            Session replays and heatmaps used to identify registration-layout
+            friction.
+          </p>
+        </article>
+
+        <article class="tool reveal">
+          <h3>PostHog & GSC</h3>
+          <p>
+            Behavioural cohorts and organic baseline signals used alongside
+            paid acquisition data.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="quote">
+    <div class="container reveal">
+      <blockquote>
+        “Search campaigns are highly effective when built around genuine user
+        search intent, not just raw high-volume keywords.”
+      </blockquote>
+      <cite>— MNF.ai Google Search Ads Strategy</cite>
+    </div>
+  </div>
+
+  <section class="cta">
+    <div class="container reveal">
+
+      <div class="eyebrow">Want the methodology?</div>
+
+      <h2>Explore the strategy behind the numbers.</h2>
+
+      <p>
+        This playbook is based on the Google Search Ads strategy developed for
+        MNF.ai, with metrics rounded and presented at a high level to respect
+        client/company confidentiality.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="button primary"
+          href="https://docs.google.com/presentation/d/1_3H37hqkCDZJu0Aq9eEd11w7VH28rETgsIuFzRjAlTk/edit?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Presentation →
+        </a>
+
+        <a class="button" href="https://monkissilent.github.io/">
+          ← Back to Portfolio
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Vineeth Chaini</span>
+      <span>Performance Marketing · Google Ads · Growth</span>
+    </div>
+  </footer>
+
+  <script>
+    const elements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
