@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Technical SEO & Analytics Playbook | Vineeth Chaini</title>
+<meta name="description" content="Technical SEO & Analytics Foundation Playbook by Vineeth Chaini — search-ready architecture, crawlability, structured data, analytics and conversion attribution.">
+<style>
+:root{--bg:#080808;--surface:#101010;--text:#f5f5f5;--muted:#a1a1aa;--accent:#a78bfa;--accent2:#c4b5fd;--border:rgba(255,255,255,.09);--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:radial-gradient(circle at 82% 5%,rgba(139,92,246,.16),transparent 28%),var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}.container{width:min(92%,var(--max));margin:auto}
+nav{position:sticky;top:0;z-index:100;background:rgba(8,8,8,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800}.back{color:var(--muted);font-size:.88rem}.back:hover{color:white}
+.hero{padding:115px 0 95px;border-bottom:1px solid var(--border)}.eyebrow{color:var(--accent2);text-transform:uppercase;letter-spacing:2px;font-size:.78rem;font-weight:800;margin-bottom:20px}
+h1{max-width:1000px;font-size:clamp(3rem,7vw,6.6rem);line-height:.95;letter-spacing:-5px;margin-bottom:28px}h1 span{color:var(--accent2)}
+.hero-copy{max-width:850px;color:var(--muted);font-size:1.14rem}.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}.tag{border:1px solid var(--border);background:rgba(255,255,255,.035);border-radius:999px;padding:7px 12px;color:#d4d4d8;font-size:.78rem}
+section{padding:100px 0}.section-heading{max-width:820px;margin-bottom:48px}h2{font-size:clamp(2.3rem,5vw,4.2rem);line-height:1;letter-spacing:-3px;margin-bottom:18px}.section-heading p{color:var(--muted)}
+.results{padding:36px 0;border-bottom:1px solid var(--border)}.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.result{padding:24px;border:1px solid var(--border);border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015))}.result strong{display:block;font-size:2rem;letter-spacing:-1px}.result span{color:var(--muted);font-size:.78rem}
+.star-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.star-card{padding:30px;border:1px solid var(--border);border-radius:18px;background:var(--surface)}.star-letter{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:10px;background:rgba(139,92,246,.13);color:var(--accent2);font-weight:900;margin-bottom:20px}.star-card h3{font-size:1.3rem;margin-bottom:12px}.star-card p{color:var(--muted);font-size:.95rem}
+.engine{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.engine-card{padding:32px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,#121212,#0c0c0c);transition:.3s}.engine-card:hover{transform:translateY(-6px);border-color:rgba(167,139,250,.4)}.engine-number{color:var(--accent2);font-size:.72rem;font-weight:800;letter-spacing:1.5px;margin-bottom:30px}.engine-card h3{font-size:1.65rem;margin-bottom:10px}.engine-card p{color:var(--muted);margin-bottom:20px}.engine-card ul{list-style:none}.engine-card li{padding:8px 0;color:#d4d4d8;border-top:1px solid var(--border);font-size:.9rem}.engine-card li::before{content:"→";color:var(--accent2);margin-right:9px}
+.flow{margin:35px 0 0;padding:20px;border:1px solid var(--border);border-radius:14px;color:var(--accent2);text-align:center;font-weight:800;background:rgba(139,92,246,.05)}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.rule{padding:28px;border:1px solid var(--border);border-radius:17px;background:var(--surface)}.rule h3{margin-bottom:9px;font-size:1.05rem}.rule p{color:var(--muted);font-size:.88rem}
+.quote{padding:60px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}blockquote{max-width:900px;font-size:clamp(1.7rem,3vw,2.7rem);line-height:1.2;letter-spacing:-1px}cite{display:block;margin-top:20px;color:var(--muted);font-size:.85rem;font-style:normal}
+.cta{text-align:center;padding:110px 0}.cta h2{max-width:850px;margin:0 auto 18px}.cta p{color:var(--muted);max-width:700px;margin:0 auto 30px}.buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}.button{padding:13px 20px;border-radius:10px;border:1px solid var(--border);font-weight:750;transition:.25s}.button.primary{background:var(--accent);border-color:var(--accent)}.button:hover{transform:translateY(-3px)}
+footer{border-top:1px solid var(--border);padding:28px 0;color:#71717a;font-size:.78rem}.footer-inner{display:flex;justify-content:space-between;gap:15px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:850px){.results-grid{grid-template-columns:repeat(2,1fr)}.star-grid,.engine{grid-template-columns:1fr}.rules{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.hero{padding:90px 0 75px}h1{letter-spacing:-3px}section{padding:75px 0}.results-grid,.rules{grid-template-columns:1fr}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav><div class="container nav-inner">
+<a class="brand" href="https://monkissilent.github.io/">Vineeth's Portfolio</a>
+<a class="back" href="https://monkissilent.github.io/">← Back to Portfolio</a>
+</div></nav>
+
+<header class="hero"><div class="container">
+<div class="eyebrow">Performance Marketing Playbook 04 · Technical SEO & Analytics</div>
+<h1>Build a search-ready foundation before <span>chasing rankings.</span></h1>
+<p class="hero-copy">Built the technical SEO and analytics foundation for MNF.ai's October 2025 website revamp — protecting search authority, improving crawlability, structuring metadata and schema, and establishing accurate measurement and attribution from Day One.</p>
+<div class="hero-tags">
+<span class="tag">Technical SEO</span><span class="tag">Screaming Frog</span><span class="tag">Google Search Console</span><span class="tag">GA4</span><span class="tag">GTM</span><span class="tag">Schema</span><span class="tag">Canonicalization</span><span class="tag">CRO</span>
+</div>
+</div></header>
+
+<section class="results"><div class="container results-grid">
+<div class="result reveal"><strong>149K+</strong><span>Total pageviews</span></div>
+<div class="result reveal"><strong>65K+</strong><span>Active users</span></div>
+<div class="result reveal"><strong>75.7K</strong><span>Search impressions</span></div>
+<div class="result reveal"><strong>1.78K</strong><span>Search clicks</span></div>
+</div></section>
+
+<section><div class="container">
+<div class="section-heading reveal"><div class="eyebrow">The Challenge</div><h2>Revamp the website without losing search authority.</h2>
+<p>Replacing a legacy platform creates technical risk. Poor crawlability, duplicate paths, broken redirects, sitemap errors and inconsistent metadata can erase organic visibility while a new site is being launched.</p></div>
+<div class="star-grid">
+<article class="star-card reveal"><div class="star-letter">S</div><h3>Situation</h3><p>MNF.ai was undergoing a website revamp and needed a search-ready technical foundation that preserved existing organic authority while creating a cleaner modern structure.</p></article>
+<article class="star-card reveal"><div class="star-letter">T</div><h3>Task</h3><p>Validate the site's technical architecture, protect legacy URLs, establish structured metadata and schema, align organic content with search intent, and make analytics attribution reliable from launch.</p></article>
+<article class="star-card reveal"><div class="star-letter">A</div><h3>Action</h3><p>Used Screaming Frog for automated crawls, validated canonical paths and metadata, implemented schema and 301 redirect rules, mapped content to filmmaker intent, configured GSC/GA4/GTM, and deployed Clarity plus conversion pixels.</p></article>
+<article class="star-card reveal"><div class="star-letter">R</div><h3>Result</h3><p>Following the October 2025 revamp, the site logged 149K+ pageviews, 65K+ active users and 72K+ new users. Search Console recorded 75.7K impressions, 1.78K clicks, 2.3% CTR and an average position of 8.8.</p></article>
+</div></div></section>
+
+<section style="background:linear-gradient(180deg,rgba(139,92,246,.035),transparent)"><div class="container">
+<div class="section-heading reveal"><div class="eyebrow">The Foundation</div><h2>Four layers that made the new site search-ready.</h2>
+<p>The work connected technical validation, content intent, attribution and user experience into one launch framework.</p></div>
+<div class="engine">
+<article class="engine-card reveal"><div class="engine-number">01 · TECHNICAL CRAWLING</div><h3>Remove structural barriers.</h3><p>Systematic crawl audits identified and resolved indexing bottlenecks before they could compound.</p><ul><li>Canonical alignment</li><li>H1–H6 and meta validation</li><li>FAQ and Organization schema</li><li>301 redirect validation</li></ul></article>
+<article class="engine-card reveal"><div class="engine-number">02 · SEARCH INTENT</div><h3>Make content discoverable and useful.</h3><p>Organic queries were mapped to modern filmmaker intent without resorting to keyword stuffing.</p><ul><li>Google Keyword Planner research</li><li>Ahrefs trend aggregation</li><li>Gemini-assisted query analysis</li><li>Contextual internal linking</li></ul></article>
+<article class="engine-card reveal"><div class="engine-number">03 · ANALYTICS & ATTRIBUTION</div><h3>Make every signal measurable.</h3><p>Tracking architecture connected behavior, conversions and downstream acquisition channels.</p><ul><li>Google Tag Manager deployment</li><li>GA4 behavior and conversion tracking</li><li>Google conversion tags</li><li>Meta Pixel validation</li></ul></article>
+<article class="engine-card reveal"><div class="engine-number">04 · UX & CRO</div><h3>Remove friction after the click.</h3><p>The landing hierarchy and CTA experience were refined for clarity, mobile readability and onboarding.</p><ul><li>Mobile-first hierarchy</li><li>CTA visibility above the fold</li><li>Reduced form-field friction</li><li>Clarity behavioral analysis</li></ul></article>
+</div>
+<div class="flow reveal">CRAWL → STRUCTURE → INTENT → TRACK → OPTIMISE → MEASURE</div>
+</div></section>
+
+<section><div class="container">
+<div class="section-heading reveal"><div class="eyebrow">Search Performance</div><h2>The technical foundation translated into measurable visibility.</h2>
+<p>The launch framework was followed by sustained organic engagement and clean search tracking.</p></div>
+<div class="rules">
+<article class="rule reveal"><h3>75.7K Impressions</h3><p>Total search visibility footprint recorded in Google Search Console.</p></article>
+<article class="rule reveal"><h3>1.78K Clicks</h3><p>Net search traffic driven to the revamped site.</p></article>
+<article class="rule reveal"><h3>8.8 Average Position</h3><p>Overall average search position, placing the site's tracked visibility within the top 10.</p></article>
+</div></div></section>
+
+<section style="background:#0b0b0b"><div class="container">
+<div class="section-heading reveal"><div class="eyebrow">Technical Launch Rules</div><h2>Three principles that protect organic growth.</h2></div>
+<div class="rules">
+<article class="rule reveal"><h3>Crawlability First</h3><p>Search engines must be able to crawl the architecture efficiently before rankings can compound.</p></article>
+<article class="rule reveal"><h3>Schema & Canonical Discipline</h3><p>Canonical tags and structured FAQ data help search engines interpret the correct platform information.</p></article>
+<article class="rule reveal"><h3>Analytics Readiness</h3><p>GTM metrics and pixel rules should be deployed and double-tested before public acquisition activity begins.</p></article>
+</div></div></section>
+
+<section><div class="container">
+<div class="section-heading reveal"><div class="eyebrow">Measurement Stack</div><h2>One foundation. Multiple sources of truth.</h2></div>
+<div class="rules">
+<article class="rule reveal"><h3>Screaming Frog</h3><p>Deep crawls, duplicate checks and redirect diagnostics with response codes and crawl depth.</p></article>
+<article class="rule reveal"><h3>Search Console + GA4</h3><p>Indexation, search visibility, user behavior, engagement and conversion measurement.</p></article>
+<article class="rule reveal"><h3>GTM + Tracking Pixels</h3><p>Centralized tag scripts and conversion-signal routing for reliable attribution.</p></article>
+</div></div></section>
+
+<div class="quote"><div class="container reveal">
+<blockquote>“Search engine optimization is not about chasing ranks—it is about presenting the most accurate, structured answers to user search intent. Rankings follow natively when structure is clear.”</blockquote>
+<cite>— MNF.ai Technical SEO & Analytics Foundation</cite>
+</div></div>
+
+<section class="cta"><div class="container reveal">
+<div class="eyebrow">Performance Marketing Playbook 04</div>
+<h2>Make the website measurable before making it scalable.</h2>
+<p>This case study shows how technical SEO, search intent, analytics instrumentation and CRO were combined to create a durable organic acquisition foundation.</p>
+<div class="buttons">
+<a class="button primary" href="https://docs.google.com/presentation/d/1c1f_YA8gUqHdTz1h_Ajj2hwWPkXpJIqIqX_krQ6VhGU/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">View Presentation →</a>
+<a class="button" href="https://monkissilent.github.io/">← Back to Portfolio</a>
+</div></div></section>
+
+<footer><div class="container footer-inner"><span>© 2026 Vineeth Chaini</span><span>Performance Marketing · SEO · Analytics</span></div></footer>
+
+<script>
+const elements=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");obs.unobserve(entry.target);}})},{threshold:.12});
+elements.forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
