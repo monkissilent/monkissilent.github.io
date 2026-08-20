@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Vineeth Chaini | Digital Marketing & Performance Marketing</title>
-  <meta name="description" content="Digital Marketing professional specializing in Google Ads, Meta Ads, SEO, analytics and performance marketing.">
-  <meta name="author" content="Vineeth Chaini">
+  <title>Vineeth Chaini | Performance Marketing Specialist</title>
+
+  <meta
+    name="description"
+    content="Vineeth Chaini — Performance Marketing Specialist focused on Google Ads, Meta Ads, SEO, Analytics and Email Marketing."
+  >
 
   <style>
     :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --surface-2: #171717;
+      --bg: #080808;
+      --surface: #101010;
+      --surface-2: #161616;
       --text: #f5f5f5;
-      --muted: #a3a3a3;
-      --accent: #7c3aed;
-      --accent-2: #a78bfa;
-      --border: #262626;
-      --max: 1120px;
+      --muted: #a1a1aa;
+      --accent: #8b5cf6;
+      --accent-light: #c4b5fd;
+      --border: rgba(255,255,255,0.09);
+      --max-width: 1180px;
     }
 
     * {
@@ -32,11 +35,20 @@
     }
 
     body {
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -45,18 +57,20 @@
     }
 
     .container {
-      width: min(92%, var(--max));
+      width: min(92%, var(--max-width));
       margin: auto;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(16px);
-      background: rgba(10, 10, 10, 0.82);
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(8,8,8,0.78);
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
@@ -68,65 +82,101 @@
     }
 
     .logo {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
 
     .logo span {
-      color: var(--accent-2);
+      color: var(--accent-light);
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
       list-style: none;
+      gap: 28px;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
     }
 
     .nav-links a:hover {
       color: white;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 88vh;
       display: flex;
       align-items: center;
-      padding: 80px 0;
+      padding: 110px 0 100px;
+
       background:
-        radial-gradient(circle at 75% 25%, rgba(124,58,237,0.18), transparent 30%),
-        radial-gradient(circle at 20% 70%, rgba(124,58,237,0.08), transparent 28%);
+        radial-gradient(
+          circle at 78% 20%,
+          rgba(139,92,246,0.22),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(139,92,246,0.09),
+          transparent 30%
+        );
+    }
+
+    .hero-content {
+      max-width: 980px;
     }
 
     .eyebrow {
-      color: var(--accent-2);
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 1.5px;
+      color: var(--accent-light);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
-    h1 {
-      max-width: 900px;
-      font-size: clamp(3rem, 7vw, 6.4rem);
-      line-height: 0.98;
-      letter-spacing: -4px;
-      margin-bottom: 28px;
+    .hero h1 {
+      font-size: clamp(3.3rem, 7vw, 7rem);
+      line-height: 0.94;
+      letter-spacing: -5px;
+      max-width: 1050px;
+      margin-bottom: 32px;
     }
 
-    h1 span {
-      color: var(--accent-2);
+    .hero h1 span {
+      color: var(--accent-light);
     }
 
     .hero-description {
-      max-width: 700px;
+      max-width: 780px;
       color: var(--muted);
-      font-size: 1.18rem;
+      font-size: 1.2rem;
+      line-height: 1.75;
       margin-bottom: 36px;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 38px;
+    }
+
+    .proof-pill {
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.035);
+      border-radius: 999px;
+      color: #d4d4d8;
+      font-size: 0.82rem;
     }
 
     .buttons {
@@ -136,14 +186,11 @@
     }
 
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 22px;
+      padding: 14px 22px;
       border-radius: 10px;
-      font-weight: 700;
       border: 1px solid var(--border);
-      transition: 0.2s ease;
+      font-weight: 700;
+      transition: 0.25s ease;
     }
 
     .button.primary {
@@ -152,80 +199,90 @@
     }
 
     .button.primary:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       filter: brightness(1.12);
     }
 
     .button.secondary:hover {
       background: var(--surface-2);
+      transform: translateY(-3px);
     }
 
-    /* STATS */
+    /* =========================
+       IMPACT STATS
+    ========================= */
 
     .stats {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 42px 0;
+      padding: 48px 0;
     }
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 25px;
     }
 
     .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
+      font-size: 2rem;
+      font-weight: 850;
       letter-spacing: -1px;
     }
 
     .stat-label {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.78rem;
       margin-top: 4px;
     }
 
-    /* SECTIONS */
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
     section {
-      padding: 110px 0;
+      padding: 115px 0;
     }
 
     .section-heading {
+      max-width: 780px;
       margin-bottom: 55px;
     }
 
     .section-heading h2 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      letter-spacing: -2px;
-      margin-bottom: 12px;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
     }
 
     .section-heading p {
       color: var(--muted);
-      max-width: 650px;
+      font-size: 1.05rem;
+      max-width: 700px;
     }
 
-    /* ABOUT */
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 70px;
     }
 
     .about-text p {
       color: var(--muted);
-      margin-bottom: 18px;
       font-size: 1.05rem;
+      margin-bottom: 20px;
     }
 
     .about-highlight {
-      padding: 30px;
+      padding: 32px;
+      background: linear-gradient(145deg,#121212,#0d0d0d);
       border: 1px solid var(--border);
       border-radius: 18px;
-      background: linear-gradient(145deg, #111, #0d0d0d);
     }
 
     .about-highlight h3 {
@@ -234,11 +291,11 @@
 
     .about-highlight ul {
       list-style: none;
-      color: var(--muted);
     }
 
     .about-highlight li {
-      padding: 10px 0;
+      padding: 11px 0;
+      color: var(--muted);
       border-bottom: 1px solid var(--border);
     }
 
@@ -246,75 +303,253 @@
       border-bottom: 0;
     }
 
-    /* CASE STUDIES */
+    /* =========================
+       PLAYBOOKS
+    ========================= */
 
-    .case-grid {
+    .playbooks-section {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(139,92,246,0.035),
+          transparent 40%
+        );
+    }
+
+    .playbook-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
 
-    .case-card {
-      padding: 32px;
+    .playbook-card {
+      position: relative;
+      min-height: 390px;
+      padding: 34px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.045),
+          rgba(255,255,255,0.015)
+        );
+
       border: 1px solid var(--border);
-      border-radius: 18px;
-      background: var(--surface);
-      transition: 0.25s ease;
+      border-radius: 22px;
+
+      transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
     }
 
-    .case-card:hover {
-      transform: translateY(-5px);
-      border-color: #444;
+    .playbook-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(167,139,250,0.4);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(139,92,246,0.09),
+          rgba(255,255,255,0.02)
+        );
     }
 
-    .case-number {
-      color: var(--accent-2);
+    .playbook-number {
+      color: var(--accent-light);
+      font-size: 0.8rem;
       font-weight: 800;
-      margin-bottom: 25px;
+      letter-spacing: 1.5px;
+      margin-bottom: 55px;
     }
 
-    .case-card h3 {
-      font-size: 1.45rem;
+    .playbook-icon {
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .playbook-card h3 {
+      font-size: 1.55rem;
+      line-height: 1.2;
       margin-bottom: 12px;
     }
 
-    .case-card p {
-      color: var(--muted);
-      margin-bottom: 22px;
+    .playbook-card .subtitle {
+      color: #d4d4d8;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
     }
 
-    .case-results {
+    .playbook-card > p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 520px;
+    }
+
+    /* Animated subtitle/result card */
+
+    .result-reveal {
+      position: absolute;
+      left: 25px;
+      right: 25px;
+      bottom: 25px;
+
+      padding: 16px;
+
+      background: rgba(12,12,12,0.92);
+      backdrop-filter: blur(12px);
+
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+
+      transform: translateY(72px);
+      opacity: 0;
+
+      transition:
+        transform 0.4s cubic-bezier(.2,.8,.2,1),
+        opacity 0.35s ease;
+    }
+
+    .playbook-card:hover .result-reveal {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .result-title {
+      color: var(--accent-light);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .result-metrics {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 7px;
     }
 
-    .tag {
-      padding: 6px 10px;
-      border-radius: 7px;
+    .metric {
+      padding: 5px 8px;
+      border-radius: 6px;
       background: var(--surface-2);
-      color: #d4d4d4;
-      font-size: 0.78rem;
-      border: 1px solid var(--border);
+      color: #ddd;
+      font-size: 0.72rem;
     }
 
-    /* SKILLS */
+    .playbook-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--accent-light);
+      font-weight: 750;
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       CERTIFICATIONS
+    ========================= */
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .cert-card {
+      position: relative;
+      min-height: 180px;
+      padding: 25px;
+
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+
+      overflow: hidden;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .cert-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -55px;
+      top: -55px;
+      border-radius: 50%;
+      background: rgba(139,92,246,0.12);
+      transition: transform 0.4s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(167,139,250,0.35);
+    }
+
+    .cert-card:hover::after {
+      transform: scale(1.6);
+    }
+
+    .cert-type {
+      color: var(--accent-light);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .cert-card h3 {
+      font-size: 1.05rem;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      max-width: 90%;
+    }
+
+    .cert-card p {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .cert-year {
+      position: absolute;
+      bottom: 22px;
+      left: 25px;
+      color: #71717a;
+      font-size: 0.72rem;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
 
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .skill {
-      padding: 12px 17px;
-      background: var(--surface);
+      padding: 10px 14px;
       border: 1px solid var(--border);
-      border-radius: 9px;
-      color: #ddd;
+      border-radius: 8px;
+      background: var(--surface);
+      color: #d4d4d8;
+      font-size: 0.85rem;
+      transition: 0.2s ease;
     }
 
-    /* CONTACT */
+    .skill:hover {
+      border-color: var(--accent);
+      color: white;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact {
       text-align: center;
@@ -322,24 +557,31 @@
     }
 
     .contact h2 {
-      font-size: clamp(2.4rem, 5vw, 4.5rem);
-      letter-spacing: -2px;
-      margin-bottom: 18px;
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
     }
 
     .contact p {
-      max-width: 600px;
-      margin: 0 auto 30px;
+      max-width: 650px;
+      margin: 0 auto 32px;
       color: var(--muted);
     }
 
-    /* FOOTER */
+    .contact .buttons {
+      justify-content: center;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       border-top: 1px solid var(--border);
       padding: 30px 0;
-      color: var(--muted);
-      font-size: 0.85rem;
+      color: #71717a;
+      font-size: 0.8rem;
     }
 
     .footer-inner {
@@ -348,48 +590,85 @@
       gap: 20px;
     }
 
-    /* MOBILE */
+    /* =========================
+       SCROLL ANIMATION
+    ========================= */
 
-    @media (max-width: 800px) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+
       .nav-links {
         display: none;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
       }
 
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .about-grid,
-      .case-grid {
+      .playbook-grid {
         grid-template-columns: 1fr;
       }
 
-      h1 {
-        letter-spacing: -2px;
+      .cert-grid {
+        grid-template-columns: 1fr;
       }
 
       section {
-        padding: 80px 0;
+        padding: 85px 0;
+      }
+
+      .result-reveal {
+        position: static;
+        margin-top: 28px;
+        transform: none;
+        opacity: 1;
+      }
+
+      .playbook-card {
+        min-height: auto;
       }
 
       .footer-inner {
         flex-direction: column;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-
-      .stat-number {
-        font-size: 1.7rem;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 100px 0 80px;
       }
     }
   </style>
@@ -397,69 +676,120 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
   <nav>
     <div class="container nav-inner">
-      <a href="#" class="logo">Vineeth<span>.</span></a>
+
+      <a href="#" class="logo">
+        Vineeth<span>.</span>
+      </a>
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
+        <li><a href="#playbooks">Playbooks</a></li>
+        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
     </div>
   </nav>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <header class="hero">
-    <div class="container">
+
+    <div class="container hero-content">
 
       <div class="eyebrow">
-        Digital Marketing · Performance Marketing
+        Performance Marketing Specialist
       </div>
 
       <h1>
-        Turning <span>marketing data</span>
-        into business growth.
+        I Build Performance Marketing Systems That
+        <span>Turn Clicks Into Customers.</span>
       </h1>
 
       <p class="hero-description">
-        Digital Marketing professional specializing in Google Ads, Meta Ads,
-        SEO, analytics, email marketing and conversion-focused growth
-        strategies for startups and SaaS businesses.
+        Google Ads, Meta Ads, SEO, Analytics and Email Marketing —
+        combining strategy, experimentation and measurement to create
+        scalable acquisition and conversion systems.
       </p>
 
+      <div class="hero-proof">
+
+        <span class="proof-pill">
+          15 Years Professional Experience
+        </span>
+
+        <span class="proof-pill">
+          6+ Years Digital Marketing
+        </span>
+
+        <span class="proof-pill">
+          SaaS & Startup Experience
+        </span>
+
+        <span class="proof-pill">
+          Data-Driven Growth
+        </span>
+
+      </div>
+
       <div class="buttons">
-        <a href="#work" class="button primary">View My Work</a>
-        <a href="#contact" class="button secondary">Let's Connect</a>
+
+        <a href="#playbooks" class="button primary">
+          View My Results
+        </a>
+
+        <a href="#contact" class="button secondary">
+          Let's Connect
+        </a>
+
       </div>
 
     </div>
+
   </header>
 
 
-  <!-- STATS -->
+  <!-- =========================
+       IMPACT
+  ========================= -->
 
   <section class="stats">
+
     <div class="container stats-grid">
 
       <div>
-        <div class="stat-number">₹5L+</div>
-        <div class="stat-label">Paid Media Budget Managed</div>
-      </div>
-
-      <div>
-        <div class="stat-number">10.5K+</div>
-        <div class="stat-label">Registrations Generated</div>
+        <div class="stat-number">₹3L+</div>
+        <div class="stat-label">Google Ads Budget Managed</div>
       </div>
 
       <div>
         <div class="stat-number">30.8K+</div>
-        <div class="stat-label">Ad Clicks</div>
+        <div class="stat-label">Targeted Ad Clicks</div>
+      </div>
+
+      <div>
+        <div class="stat-number">14.1K+</div>
+        <div class="stat-label">Conversion Signals</div>
+      </div>
+
+      <div>
+        <div class="stat-number">10.5K+</div>
+        <div class="stat-label">Website Registrations</div>
+      </div>
+
+      <div>
+        <div class="stat-number">1.42M+</div>
+        <div class="stat-label">Meta Impressions</div>
       </div>
 
       <div>
@@ -468,54 +798,76 @@
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
   <section id="about">
+
     <div class="container">
 
-      <div class="section-heading">
-        <div class="eyebrow">About Me</div>
-        <h2>Marketing with a numbers-first mindset.</h2>
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          About Me
+        </div>
+
+        <h2>
+          Strategy, execution and measurement — connected.
+        </h2>
+
+        <p>
+          I approach digital marketing as a measurable growth system,
+          connecting acquisition channels, user behaviour, conversion
+          data and business objectives.
+        </p>
+
       </div>
+
 
       <div class="about-grid">
 
-        <div class="about-text">
+        <div class="about-text reveal">
 
           <p>
-            I work at the intersection of digital marketing, analytics and
-            business growth — building campaigns that are designed to be
-            measurable, testable and scalable.
+            I have 15 years of overall professional experience, including
+            6+ years of hands-on Digital Marketing experience across
+            startups, SaaS products and small businesses.
           </p>
 
           <p>
-            My experience spans paid acquisition, SEO, email marketing,
-            analytics, conversion optimization and marketing operations,
-            with a particular focus on startup and SaaS environments.
+            My work spans Performance Marketing, Google Ads, Meta Ads,
+            SEO, Email Marketing, Marketing Analytics, Marketing
+            Automation and CRO.
           </p>
 
           <p>
-            I believe great marketing isn't just about generating traffic.
-            It's about understanding what happens after the click.
+            My philosophy is simple:
+            <strong>don't optimise for activity — optimise for outcomes.</strong>
           </p>
 
         </div>
 
-        <div class="about-highlight">
+
+        <div class="about-highlight reveal">
 
           <h3>What I Bring</h3>
 
           <ul>
-            <li>Performance-focused campaign strategy</li>
-            <li>Google Ads & Meta Ads management</li>
-            <li>GA4 & marketing analytics</li>
-            <li>SEO & organic growth</li>
-            <li>Email marketing & lifecycle campaigns</li>
-            <li>Conversion optimization</li>
-            <li>Marketing reporting & attribution</li>
+
+            <li>Performance Marketing Strategy</li>
+            <li>Google Ads & Search Acquisition</li>
+            <li>Meta Ads & Full-Funnel Campaigns</li>
+            <li>Technical & On-Page SEO</li>
+            <li>GA4, GTM & Marketing Analytics</li>
+            <li>Email Marketing & Automation</li>
+            <li>Conversion Rate Optimization</li>
+            <li>Marketing Reporting & Attribution</li>
+
           </ul>
 
         </div>
@@ -523,109 +875,238 @@
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- CASE STUDIES -->
+  <!-- =========================
+       PLAYBOOKS
+  ========================= -->
 
-  <section id="work">
+  <section id="playbooks" class="playbooks-section">
+
     <div class="container">
 
-      <div class="section-heading">
-        <div class="eyebrow">Selected Work</div>
-        <h2>Results over vanity metrics.</h2>
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Performance Marketing Playbooks
+        </div>
+
+        <h2>
+          How I Turn Strategy Into Measurable Growth.
+        </h2>
+
         <p>
-          A selection of marketing initiatives focused on acquisition,
-          conversion and measurable business outcomes.
+          Four practical playbooks built from real campaign execution —
+          covering paid acquisition, lifecycle marketing, technical SEO
+          and marketing analytics.
         </p>
+
       </div>
 
 
-      <div class="case-grid">
+      <div class="playbook-grid">
 
-        <article class="case-card">
 
-          <div class="case-number">01 · GOOGLE ADS</div>
+        <!-- GOOGLE ADS -->
 
-          <h3>Search Acquisition Campaign</h3>
+        <article class="playbook-card reveal">
+
+          <div class="playbook-number">
+            PLAYBOOK 01 · GOOGLE SEARCH ADS
+          </div>
+
+          <div class="playbook-icon">
+            🔎
+          </div>
+
+          <h3>
+            From Search Intent to 10.5K+ Registrations
+          </h3>
+
+          <div class="subtitle">
+            Built a two-phase acquisition framework around intent discovery,
+            keyword validation and conversion optimisation.
+          </div>
 
           <p>
-            Designed and managed Google Search campaigns focused on
-            registrations and conversion efficiency across Indian and
-            international audiences.
+            Operated within a disciplined ₹500/day budget while identifying
+            high-intent search demand and scaling validated keyword groups.
           </p>
 
-          <div class="case-results">
-            <span class="tag">30.8K+ Clicks</span>
-            <span class="tag">14.1K+ Conversions</span>
-            <span class="tag">10.5K+ Registrations</span>
-            <span class="tag">₹2.58 India CPC</span>
+          <div class="result-reveal">
+
+            <div class="result-title">
+              Campaign Results
+            </div>
+
+            <div class="result-metrics">
+
+              <span class="metric">₹3L+ Managed</span>
+              <span class="metric">30.8K+ Clicks</span>
+              <span class="metric">14.1K+ Conversions</span>
+              <span class="metric">10.5K+ Registrations</span>
+
+            </div>
+
+            <a href="#" class="playbook-link">
+              Explore Playbook →
+            </a>
+
           </div>
 
         </article>
 
 
-        <article class="case-card">
+        <!-- META -->
 
-          <div class="case-number">02 · META ADS</div>
+        <article class="playbook-card reveal">
 
-          <h3>Paid Social Growth</h3>
+          <div class="playbook-number">
+            PLAYBOOK 02 · META ADS
+          </div>
+
+          <div class="playbook-icon">
+            🎯
+          </div>
+
+          <h3>
+            From Passive Audiences to Qualified Leads
+          </h3>
+
+          <div class="subtitle">
+            Built a full-funnel Meta framework connecting audience,
+            creative, landing experience and Pixel feedback.
+          </div>
 
           <p>
-            Developed Meta advertising campaigns designed to build
-            awareness, generate qualified traffic and support user
-            acquisition for a startup environment.
+            Reached filmmakers, authors and AI enthusiasts through
+            behaviour-based targeting and continuously optimised the
+            acquisition funnel.
           </p>
 
-          <div class="case-results">
-            <span class="tag">1.42M+ Impressions</span>
-            <span class="tag">Paid Acquisition</span>
-            <span class="tag">Audience Testing</span>
+          <div class="result-reveal">
+
+            <div class="result-title">
+              Campaign Results
+            </div>
+
+            <div class="result-metrics">
+
+              <span class="metric">1.42M+ Impressions</span>
+              <span class="metric">1.20M+ Reach</span>
+              <span class="metric">28.5K+ Clicks</span>
+              <span class="metric">277+ Qualified Leads</span>
+
+            </div>
+
+            <a href="#" class="playbook-link">
+              Explore Playbook →
+            </a>
+
           </div>
 
         </article>
 
 
-        <article class="case-card">
+        <!-- EMAIL -->
 
-          <div class="case-number">03 · EMAIL MARKETING</div>
+        <article class="playbook-card reveal">
 
-          <h3>Lifecycle & Email Campaigns</h3>
+          <div class="playbook-number">
+            PLAYBOOK 03 · EMAIL MARKETING
+          </div>
+
+          <div class="playbook-icon">
+            ✉️
+          </div>
+
+          <h3>
+            Building an Email Engine at 138K+ Scale
+          </h3>
+
+          <div class="subtitle">
+            Built a segmented lifecycle framework combining deliverability,
+            automation, personalisation and measurement.
+          </div>
 
           <p>
-            Built email campaigns across registered and cold audiences,
-            combining segmentation, persuasive copy and deliverability
-            fundamentals.
+            Created separate nurture paths for registered users and cold
+            prospects while strengthening sender authentication and list
+            hygiene.
           </p>
 
-          <div class="case-results">
-            <span class="tag">64% Open Rate</span>
-            <span class="tag">12% CTR</span>
-            <span class="tag">SPF</span>
-            <span class="tag">DKIM</span>
-            <span class="tag">DMARC</span>
+          <div class="result-reveal">
+
+            <div class="result-title">
+              Campaign Results
+            </div>
+
+            <div class="result-metrics">
+
+              <span class="metric">138K+ Profiles</span>
+              <span class="metric">64% Open Rate</span>
+              <span class="metric">12% CTR</span>
+              <span class="metric">&lt;2% Bounces</span>
+
+            </div>
+
+            <a href="#" class="playbook-link">
+              Explore Playbook →
+            </a>
+
           </div>
 
         </article>
 
 
-        <article class="case-card">
+        <!-- SEO -->
 
-          <div class="case-number">04 · SEO & ANALYTICS</div>
+        <article class="playbook-card reveal">
 
-          <h3>Website Growth & Measurement</h3>
+          <div class="playbook-number">
+            PLAYBOOK 04 · TECHNICAL SEO & ANALYTICS
+          </div>
+
+          <div class="playbook-icon">
+            📈
+          </div>
+
+          <h3>
+            Building a Search-Ready Growth Foundation
+          </h3>
+
+          <div class="subtitle">
+            Built the technical SEO, analytics and attribution foundation
+            for the MNF.ai website revamp.
+          </div>
 
           <p>
-            Worked on website optimization, technical SEO, search research
-            and analytics implementation to create a stronger measurement
-            foundation for marketing decisions.
+            Combined crawl architecture, structured metadata, redirects,
+            schema, search intent, analytics and conversion tracking into
+            one measurement-ready foundation.
           </p>
 
-          <div class="case-results">
-            <span class="tag">GA4</span>
-            <span class="tag">GSC</span>
-            <span class="tag">Screaming Frog</span>
-            <span class="tag">Ahrefs</span>
+          <div class="result-reveal">
+
+            <div class="result-title">
+              Post-Launch Results
+            </div>
+
+            <div class="result-metrics">
+
+              <span class="metric">149K+ Pageviews</span>
+              <span class="metric">65K+ Active Users</span>
+              <span class="metric">75.7K Impressions</span>
+              <span class="metric">1.78K Search Clicks</span>
+
+            </div>
+
+            <a href="#" class="playbook-link">
+              Explore Playbook →
+            </a>
+
           </div>
 
         </article>
@@ -633,72 +1114,276 @@
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- SKILLS -->
+  <!-- =========================
+       CERTIFICATIONS
+  ========================= -->
 
-  <section id="skills">
+  <section id="certifications">
+
     <div class="container">
 
-      <div class="section-heading">
-        <div class="eyebrow">Skills & Tools</div>
-        <h2>The marketing stack.</h2>
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Certifications & Credentials
+        </div>
+
+        <h2>
+          Validated Skills. Continuous Learning.
+        </h2>
+
+        <p>
+          Industry-recognized certifications supporting my work across
+          performance marketing, analytics, social media and digital strategy.
+        </p>
+
       </div>
 
-      <div class="skills">
+
+      <div class="cert-grid">
+
+
+        <article class="cert-card reveal">
+
+          <div class="cert-type">
+            Google
+          </div>
+
+          <h3>
+            Google Ads Search Certification
+          </h3>
+
+          <p>
+            Search Advertising
+          </p>
+
+          <div class="cert-year">
+            2026 – 2027
+          </div>
+
+        </article>
+
+
+        <article class="cert-card reveal">
+
+          <div class="cert-type">
+            Google
+          </div>
+
+          <h3>
+            Google Ads Display Certification
+          </h3>
+
+          <p>
+            Display Advertising
+          </p>
+
+          <div class="cert-year">
+            2026 – 2027
+          </div>
+
+        </article>
+
+
+        <article class="cert-card reveal">
+
+          <div class="cert-type">
+            Google
+          </div>
+
+          <h3>
+            Google Analytics Certification
+          </h3>
+
+          <p>
+            Analytics & Measurement
+          </p>
+
+          <div class="cert-year">
+            2026 – 2027
+          </div>
+
+        </article>
+
+
+        <article class="cert-card reveal">
+
+          <div class="cert-type">
+            HubSpot Academy
+          </div>
+
+          <h3>
+            Social Media Marketing II Certified
+          </h3>
+
+          <p>
+            Social Media Marketing
+          </p>
+
+          <div class="cert-year">
+            2026 – 2028
+          </div>
+
+        </article>
+
+
+        <article class="cert-card reveal">
+
+          <div class="cert-type">
+            HubSpot Academy
+          </div>
+
+          <h3>
+            Social Media Certified
+          </h3>
+
+          <p>
+            Social Media Strategy
+          </p>
+
+          <div class="cert-year">
+            2026 – 2028
+          </div>
+
+        </article>
+
+
+        <article class="cert-card reveal">
+
+          <div class="cert-type">
+            Google
+          </div>
+
+          <h3>
+            Fundamentals of Digital Marketing
+          </h3>
+
+          <p>
+            Digital Marketing Foundations
+          </p>
+
+          <div class="cert-year">
+            2019 – Present
+          </div>
+
+        </article>
+
+
+        <article class="cert-card reveal">
+
+          <div class="cert-type">
+            FutureLearn
+          </div>
+
+          <h3>
+            Communication and Interpersonal Skills at Work
+          </h3>
+
+          <p>
+            University of Leeds · Institute of Coding
+          </p>
+
+          <div class="cert-year">
+            2021 – Present
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SKILLS
+  ========================= -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Skills & Technology
+        </div>
+
+        <h2>
+          The Marketing Stack.
+        </h2>
+
+      </div>
+
+
+      <div class="skills reveal">
 
         <span class="skill">Google Ads</span>
         <span class="skill">Meta Ads</span>
-        <span class="skill">GA4</span>
-        <span class="skill">Google Search Console</span>
         <span class="skill">SEO</span>
-        <span class="skill">Email Marketing</span>
-        <span class="skill">Conversion Optimization</span>
+        <span class="skill">GA4</span>
         <span class="skill">Google Tag Manager</span>
+        <span class="skill">Google Search Console</span>
+        <span class="skill">Email Marketing</span>
+        <span class="skill">Marketing Automation</span>
+        <span class="skill">CRO</span>
         <span class="skill">Microsoft Clarity</span>
         <span class="skill">PostHog</span>
-        <span class="skill">Screaming Frog</span>
-        <span class="skill">Ahrefs</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Metabase</span>
         <span class="skill">Google Sheets</span>
-        <span class="skill">Marketing Analytics</span>
-        <span class="skill">Performance Marketing</span>
+        <span class="skill">Excel</span>
+        <span class="skill">WordPress</span>
+        <span class="skill">A/B Testing</span>
+        <span class="skill">Growth Marketing</span>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
   <section id="contact" class="contact">
 
-    <div class="container">
+    <div class="container reveal">
 
-      <div class="eyebrow">Let's Work Together</div>
+      <div class="eyebrow">
+        Let's Build Something That Performs
+      </div>
 
-      <h2>Have a growth problem?</h2>
+      <h2>
+        Ready to turn marketing into measurable growth?
+      </h2>
 
       <p>
-        I'm open to opportunities in Digital Marketing, Performance Marketing,
-        Google Ads, Meta Ads and growth-focused marketing roles.
+        Open to remote and hybrid opportunities in Digital Marketing,
+        Performance Marketing, Google Ads, Meta Ads and growth-focused roles.
       </p>
 
-      <div class="buttons" style="justify-content:center;">
-
-        <!-- Replace these links with your actual profiles -->
+      <div class="buttons">
 
         <a
-          href="https://www.linkedin.com/"
+          href="https://www.linkedin.com/in/vineethchaini"
           target="_blank"
-          class="button primary">
+          class="button primary"
+        >
           LinkedIn
         </a>
 
         <a
-          href="mailto:YOUR_EMAIL@example.com"
-          class="button secondary">
+          href="mailto:vineeth.chaini.work@gmail.com"
+          class="button secondary"
+        >
           Email Me
         </a>
 
@@ -709,7 +1394,9 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -720,12 +1407,50 @@
       </div>
 
       <div>
-        Digital Marketing · Performance Marketing
+        Performance Marketing · Growth · Analytics
       </div>
 
     </div>
 
   </footer>
+
+
+  <!-- =========================
+       SCROLL REVEAL
+  ========================= -->
+
+  <script>
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const revealObserver =
+      new IntersectionObserver(
+        (entries, observer) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
+    });
+
+  </script>
 
 </body>
 </html>
