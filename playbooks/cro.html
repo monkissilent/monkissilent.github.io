@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGD82WD9');
+</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CRO / Conversion Rate Optimisation Playbook | Vineeth Chaini</title><meta content="CRO Playbook by Vineeth Chaini — behavioural analysis, friction diagnosis, landing-page optimisation, experimentation, funnel analysis and conversion optimisation at MNF.ai." name="description"/><style>
+    :root {
+      --bg: #080808;
+      --surface: #101010;
+      --surface-2: #151515;
+      --text: #f5f5f5;
+      --muted: #a1a1aa;
+      --accent: #a78bfa;
+      --accent-2: #c4b5fd;
+      --border: rgba(255,255,255,.09);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(circle at 80% 5%, rgba(139,92,246,.16), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,8,8,.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.4px;
+    }
+
+    .brand span { color: var(--accent-2); }
+
+    .back {
+      color: var(--muted);
+      font-size: .88rem;
+      transition: .2s ease;
+    }
+
+    .back:hover { color: white; }
+
+    .hero {
+      padding: 115px 0 95px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      max-width: 980px;
+      font-size: clamp(3rem, 7vw, 6.7rem);
+      line-height: .95;
+      letter-spacing: -5px;
+      margin-bottom: 28px;
+    }
+
+    h1 span { color: var(--accent-2); }
+
+    .hero-copy {
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 1.14rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 30px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.035);
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: #d4d4d8;
+      font-size: .78rem;
+    }
+
+    section { padding: 100px 0; }
+
+    .section-heading {
+      max-width: 820px;
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* Result strip */
+    .results {
+      margin-top: -1px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .result {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+    }
+
+    .result strong {
+      display: block;
+      font-size: 2rem;
+      letter-spacing: -1px;
+    }
+
+    .result span {
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    /* Diagnostic / STAR */
+    .star-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .star-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+    }
+
+    .star-letter {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: rgba(139,92,246,.13);
+      color: var(--accent-2);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .star-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .star-card p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* CRO Framework */
+    .framework {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .phase {
+      position: relative;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #121212, #0c0c0c);
+      transition: transform .3s ease, border-color .3s ease;
+    }
+
+    .phase:hover {
+      transform: translateY(-6px);
+      border-color: rgba(167,139,250,.4);
+    }
+
+    .phase-number {
+      color: var(--accent-2);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
+    }
+
+    .phase h3 {
+      font-size: 1.65rem;
+      margin-bottom: 10px;
+    }
+
+    .phase p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .phase ul {
+      list-style: none;
+    }
+
+    .phase li {
+      padding: 8px 0;
+      color: #d4d4d8;
+      border-top: 1px solid var(--border);
+      font-size: .9rem;
+    }
+
+    .phase li::before {
+      content: "→";
+      color: var(--accent-2);
+      margin-right: 9px;
+    }
+
+    .flow {
+      margin: 35px 0 0;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: var(--accent-2);
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: .5px;
+      background: rgba(139,92,246,.05);
+    }
+
+    /* Optimization */
+    .rules {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .rule {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--surface);
+    }
+
+    .rule h3 {
+      margin-bottom: 9px;
+      font-size: 1.05rem;
+    }
+
+    .rule p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    /* Measurement Stack */
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .tool {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+
+    .tool h3 { margin-bottom: 8px; }
+
+    .tool p {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    /* Decision Table */
+    .decision-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .decision-table th,
+    .decision-table td {
+      padding: 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .decision-table th {
+      color: var(--accent-2);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .decision-table td {
+      color: #d4d4d8;
+      font-size: .88rem;
+    }
+
+    .decision-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .78rem;
+      max-width: 900px;
+    }
+
+    /* Principle */
+    .principle {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .principle blockquote {
+      max-width: 920px;
+      font-size: clamp(1.9rem, 3.5vw, 3.1rem);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+    }
+
+    .scope-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .76rem;
+      max-width: 1000px;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 110px 0;
+    }
+
+    .cta h2 {
+      max-width: 850px;
+      margin: 0 auto 18px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      padding: 13px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-weight: 750;
+      transition: .25s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button:hover { transform: translateY(-3px); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: #71717a;
+      font-size: .78rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 850px) {
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .star-grid,
+      .framework,
+      .scope-grid { grid-template-columns: 1fr; }
+
+      .rules,
+      .stack { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 90px 0 75px; }
+
+      h1 { letter-spacing: -3px; }
+
+      section { padding: 75px 0; }
+
+      .results-grid,
+      .rules,
+      .stack,
+      .scope-grid { grid-template-columns: 1fr; }
+
+      .decision-table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .decision-table th,
+      .decision-table td {
+        min-width: 180px;
+      }
+
+      .footer-inner { flex-direction: column; }
+    }
+</style></head><body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WGD82WD9" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+<div class="container nav-inner">
+<a class="brand" href="https://monkissilent.github.io/">Vineeth's Portfolio</a>
+<a class="back" href="https://monkissilent.github.io/">← Back to Portfolio</a>
+</div>
+</nav>
+
+<header class="hero">
+<div class="container">
+<div class="eyebrow">Performance Marketing Playbook 05 · CRO</div>
+<h1>
+        From Traffic to
+        <span>Frictionless Conversion.</span>
+</h1>
+<p class="hero-copy">
+        CRO work at MNF.ai focused on what happened after the click — using behavioural evidence,
+        funnel analysis and experimentation to identify friction across landing pages, registration
+        flows, mobile experiences and conversion journeys.
+      </p>
+<div class="hero-tags">
+<span class="tag">CRO</span>
+<span class="tag">Landing Pages</span>
+<span class="tag">UX Optimisation</span>
+<span class="tag">Funnel Analysis</span>
+<span class="tag">A/B Testing</span>
+<span class="tag">GA4</span>
+<span class="tag">GTM</span>
+<span class="tag">Microsoft Clarity</span>
+<span class="tag">PostHog</span>
+</div>
+</div>
+</header>
+
+<section class="results">
+<div class="container results-grid">
+<div class="result reveal">
+<strong>10.5K+</strong>
+<span>Website Registrations</span>
+</div>
+<div class="result reveal">
+<strong>60%+</strong>
+<span>Observed Registrations After CRO Work</span>
+</div>
+<div class="result reveal">
+<strong>2</strong>
+<span>Initial Registration Fields</span>
+</div>
+<div class="result reveal">
+<strong>Version 2 LP</strong>
+<span>Primary Signup Experience</span>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-heading reveal">
+<div class="eyebrow">Business Context &amp; CRO Objectives</div>
+<h2>The problem wasn't only getting traffic.</h2>
+<p>
+          MNF.ai acquired traffic through Google Ads, Meta Ads, Organic Search and social channels.
+          The CRO challenge was to make the next step easier — from landing-page arrival through
+          registration and onward activation.
+        </p>
+</div>
+
+<div class="star-grid">
+<article class="star-card reveal">
+<div class="star-letter">01</div>
+<h3>Primary Conversion Journey</h3>
+<p>
+            Google / Meta Ad → Landing Page → Sign Up Page → Account Created → Free Trial Activated.
+            Workshop traffic followed a separate landing-page-to-registration journey.
+          </p>
+</article>
+
+<article class="star-card reveal">
+<div class="star-letter">02</div>
+<h3>Observed Friction</h3>
+<p>
+            Initial UX was opinion-driven. Clarity, PostHog, GA4 and behavioural evidence revealed
+            unnecessary steps, navigation friction, form hesitation, mobile issues and long flows.
+          </p>
+</article>
+
+<article class="star-card reveal">
+<div class="star-letter">03</div>
+<h3>CRO Objectives</h3>
+<p>
+            Reduce friction, improve mobile behaviour, increase completed registrations, improve
+            landing-page progression and make the conversion journey easier to understand.
+          </p>
+</article>
+
+<article class="star-card reveal">
+<div class="star-letter">04</div>
+<h3>Core Principle</h3>
+<p>
+            A landing page is not successful because it gets a click. It is successful when the
+            user can easily take the next meaningful action.
+          </p>
+</article>
+</div>
+</div>
+</section>
+
+<section style="background: linear-gradient(180deg, rgba(139,92,246,.035), transparent);">
+<div class="container">
+<div class="section-heading reveal">
+<div class="eyebrow">Diagnose</div>
+<h2>From opinion to evidence.</h2>
+<p>
+          Behavioural and funnel data was used to understand where users hesitated, repeated actions,
+          abandoned forms, struggled with navigation or failed to progress.
+        </p>
+</div>
+
+<table class="decision-table reveal">
+<thead>
+<tr>
+<th>Signal Observed</th>
+<th>What It Suggested</th>
+<th>CRO Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dead / repeated clicks</td>
+<td>Expected interaction was unclear.</td>
+<td>Improve interaction clarity and page hierarchy.</td>
+</tr>
+<tr>
+<td>Navigation friction</td>
+<td>Users struggled to find the next step.</td>
+<td>Simplify navigation and reduce decision points.</td>
+</tr>
+<tr>
+<td>Form abandonment</td>
+<td>The initial commitment was too high.</td>
+<td>Reduce fields and capture only essential information.</td>
+</tr>
+<tr>
+<td>Excessive scrolling</td>
+<td>Important information or action was too far away.</td>
+<td>Rework above-the-fold content and information hierarchy.</td>
+</tr>
+<tr>
+<td>Mobile friction</td>
+<td>The experience was not sufficiently mobile-first.</td>
+<td>Rework mobile layout and conversion flow.</td>
+</tr>
+<tr>
+<td>Back-and-forth behaviour</td>
+<td>The path contained unnecessary steps.</td>
+<td>Simplify the conversion journey.</td>
+</tr>
+<tr>
+<td>Registration → activation drop-off</td>
+<td>Account creation was not the final business outcome.</td>
+<td>Improve post-registration progression and automate activation.</td>
+</tr>
+</tbody>
+</table>
+
+<p class="note reveal">
+        Diagnostic inputs included Microsoft Clarity session recordings and heatmaps, dead and repeated
+        clicks, scroll behaviour, GA4 funnel analysis, PostHog user journeys and funnel progression,
+        and Google Ads / Meta conversion signals.
+      </p>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-heading reveal">
+<div class="eyebrow">CRO Framework</div>
+<h2>Turn behaviour into a repeatable optimisation system.</h2>
+<p>
+          CRO was treated as a continuous loop: understand the business objective, diagnose friction,
+          form a hypothesis, experiment, implement, measure and iterate.
+        </p>
+</div>
+
+<div class="framework">
+<article class="phase reveal">
+<div class="phase-number">01 · UNDERSTAND</div>
+<h3>Business objective first.</h3>
+<p>Connect the user journey to the conversion that actually matters.</p>
+<ul>
+<li>Business objective</li>
+<li>User intent</li>
+<li>Conversion goal</li>
+</ul>
+</article>
+
+<article class="phase reveal">
+<div class="phase-number">02 · DIAGNOSE</div>
+<h3>Find the friction.</h3>
+<p>Use behavioural and funnel evidence instead of relying on design opinion.</p>
+<ul>
+<li>User behaviour</li>
+<li>Funnel progression</li>
+<li>Friction signals</li>
+</ul>
+</article>
+
+<article class="phase reveal">
+<div class="phase-number">03 · HYPOTHESISE</div>
+<h3>Turn signals into hypotheses.</h3>
+<p>Translate observed behaviour into a specific problem and testable change.</p>
+<ul>
+<li>Signal</li>
+<li>Problem</li>
+<li>Hypothesis</li>
+</ul>
+</article>
+
+<article class="phase reveal">
+<div class="phase-number">04 · EXPERIMENT</div>
+<h3>Test the experience.</h3>
+<p>Use structured experimentation to validate whether a different experience performs better.</p>
+<ul>
+<li>Version 1</li>
+<li>Controlled change</li>
+<li>Version 2</li>
+</ul>
+</article>
+
+<article class="phase reveal">
+<div class="phase-number">05 · IMPLEMENT</div>
+<h3>Move from direction to deployment.</h3>
+<p>Own the CRO direction and work with development where technical implementation is required.</p>
+<ul>
+<li>UX direction</li>
+<li>Prioritisation</li>
+<li>Developer collaboration</li>
+</ul>
+</article>
+
+<article class="phase reveal">
+<div class="phase-number">06 · MEASURE &amp; ITERATE</div>
+<h3>Learn from the result.</h3>
+<p>Use conversion and behavioural evidence to decide what to keep, change or test next.</p>
+<ul>
+<li>Behaviour</li>
+<li>Progression</li>
+<li>Conversion</li>
+</ul>
+</article>
+</div>
+
+<div class="flow reveal">
+        UNDERSTAND → DIAGNOSE → HYPOTHESISE → EXPERIMENT → IMPLEMENT → MEASURE → ITERATE
+      </div>
+</div>
+</section>
+
+<section style="background: #0b0b0b;">
+<div class="container">
+<div class="section-heading reveal">
+<div class="eyebrow">Optimisation</div>
+<h2>Reducing friction across the user journey.</h2>
+<p>
+          The optimisation work covered the experience around registration, landing pages, mobile
+          behaviour, navigation, messaging and post-registration activation.
+        </p>
+</div>
+
+<div class="rules">
+<article class="rule reveal">
+<h3>01 · Mobile-first experience</h3>
+<p>Improved mobile layout and prioritised the conversion path for smaller screens.</p>
+</article>
+
+<article class="rule reveal">
+<h3>02 · Reduced registration fields</h3>
+<p>
+            Initial registration was reduced to Name + Email. Phone was removed from the first interaction;
+            profile enrichment could happen later through automated emails.
+          </p>
+</article>
+
+<article class="rule reveal">
+<h3>03 · Simplified navigation</h3>
+<p>Reduced navigation friction and unnecessary decision points around the conversion path.</p>
+</article>
+
+<article class="rule reveal">
+<h3>04 · Improved flow &amp; messaging</h3>
+<p>Refined page structure, copy and messaging so the next action was clearer.</p>
+</article>
+
+<article class="rule reveal">
+<h3>05 · CTA optimisation</h3>
+<p>Adjusted CTA placement and presentation around user intent and the desired next action.</p>
+</article>
+
+<article class="rule reveal">
+<h3>06 · Automated verification</h3>
+<p>Used CAPTCHA-based verification to reduce unnecessary manual friction in the registration process.</p>
+</article>
+
+<article class="rule reveal">
+<h3>07 · Automatic trial activation</h3>
+<p>Free-trial activation became automatic after registration, reducing post-registration friction.</p>
+</article>
+
+<article class="rule reveal">
+<h3>Page speed</h3>
+<p>Page-speed considerations were included as part of the broader mobile and landing-page optimisation work.</p>
+</article>
+
+<article class="rule reveal">
+<h3>Workshop registration</h3>
+<p>Applied the same friction-reduction thinking to workshop registration, including reduced form fields.</p>
+</article>
+</div>
+
+<div class="flow reveal">
+        CAPTURE MINIMUM INFORMATION → CREATE ACCOUNT → AUTOMATE ACTIVATION → ENRICH PROFILE LATER
+      </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-heading reveal">
+<div class="eyebrow">Experimentation &amp; Decision Log</div>
+<h2>Version 1 → experiments → Version 2.</h2>
+<p>
+          Meta A/B tests and Google Ads experiments supported the broader CRO process. After multiple
+          experiments and iterations, a new landing-page experience was developed and Version 2 became
+          the primary Sign Up Page.
+        </p>
+</div>
+
+<div class="flow reveal">
+        VERSION 1 → BEHAVIOURAL ANALYSIS → CRO HYPOTHESES → MULTIPLE EXPERIMENTS → VERSION 2 → PRIMARY EXPERIENCE
+      </div>
+
+<table class="decision-table reveal" style="margin-top:18px;">
+<thead>
+<tr>
+<th>Signal</th>
+<th>Decision</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Form abandonment</td>
+<td>Reduce fields</td>
+<td>Lower the initial commitment and make registration easier.</td>
+</tr>
+<tr>
+<td>Mobile friction</td>
+<td>Adopt mobile-first optimisation</td>
+<td>Improve usability where interaction friction was visible.</td>
+</tr>
+<tr>
+<td>Navigation difficulty</td>
+<td>Simplify navigation</td>
+<td>Reduce unnecessary decisions between intent and action.</td>
+</tr>
+<tr>
+<td>Excessive scrolling</td>
+<td>Rework hierarchy</td>
+<td>Bring important information and action closer to the user.</td>
+</tr>
+<tr>
+<td>Repeated / dead clicks</td>
+<td>Improve interaction clarity</td>
+<td>Make expected interactions and next actions clearer.</td>
+</tr>
+<tr>
+<td>Long conversion flow</td>
+<td>Simplify the journey</td>
+<td>Remove unnecessary steps between intent and registration.</td>
+</tr>
+<tr>
+<td>Registration → Trial gap</td>
+<td>Automate trial activation</td>
+<td>Reduce friction after account creation.</td>
+</tr>
+<tr>
+<td>Repeated experimentation</td>
+<td>Promote Version 2</td>
+<td>Use the evolved experience as the primary signup page.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="scope-grid" style="margin-top:18px;">
+<article class="star-card reveal">
+<div class="eyebrow">Role Ownership</div>
+<h3>I owned the CRO diagnosis and optimisation direction.</h3>
+<p>
+            I used behavioural and funnel data to identify friction, proposed and prioritised changes,
+            and worked with the developer where implementation required technical support.
+          </p>
+</article>
+
+<article class="star-card reveal">
+<div class="eyebrow">Experimentation</div>
+<h3>Testing was part of the operating system.</h3>
+<p>
+            Meta A/B testing and Google Ads experiments were used alongside behavioural analysis to
+            validate changes and inform the next iteration.
+          </p>
+</article>
+</div>
+</div>
+</section>
+
+<section style="background: linear-gradient(180deg, rgba(139,92,246,.035), transparent);">
+<div class="container">
+<div class="section-heading reveal">
+<div class="eyebrow">Measurement Impact</div>
+<h2>Conversion improvement through friction reduction.</h2>
+<p>
+          The objective was not simply to increase clicks. It was to improve the probability that a
+          qualified visitor could successfully progress through the conversion journey.
+        </p>
+</div>
+
+<div class="results-grid">
+<div class="result reveal">
+<strong>10.5K+</strong>
+<span>Website Registrations</span>
+</div>
+<div class="result reveal">
+<strong>60%+</strong>
+<span>Observed After CRO Work</span>
+</div>
+<div class="result reveal">
+<strong>2-Field</strong>
+<span>Initial Registration Form</span>
+</div>
+<div class="result reveal">
+<strong>Version 2</strong>
+<span>Primary Signup Experience</span>
+</div>
+</div>
+
+<p class="note reveal">
+        The 60%+ figure represents an observed distribution of the available registrations after CRO work.
+        It is not a claim that CRO alone caused 60%+ of registrations, and no isolated causal uplift percentage
+        is asserted for the CRO changes.
+      </p>
+
+<div class="stack" style="margin-top:28px;">
+<article class="tool reveal">
+<h3>Google Ads + Meta Ads</h3>
+<p>Acquisition and conversion signals connected the traffic source to downstream behaviour.</p>
+</article>
+
+<article class="tool reveal">
+<h3>GA4 + GTM</h3>
+<p>Funnel and event measurement helped identify progression and drop-off through the website journey.</p>
+</article>
+
+<article class="tool reveal">
+<h3>Clarity + PostHog</h3>
+<p>Session recordings, heatmaps, user journeys and funnel progression exposed behavioural friction.</p>
+</article>
+</div>
+
+<p class="scope-note reveal">
+        Observed qualitative outcomes included less form abandonment, better mobile behaviour, more completed
+        registrations, improved landing-page progression, lower friction and better alignment between acquisition
+        messaging and the page experience.
+      </p>
+</div>
+</section>
+
+<div class="principle">
+<div class="container reveal">
+<div class="eyebrow">My CRO Principle</div>
+<blockquote>
+        “The highest-impact CRO opportunity is often not a bigger CTA or a new headline. It is removing
+        the unnecessary step that stands between user intent and action.”
+      </blockquote>
+<cite>— Conversion Rate Optimisation</cite>
+</div>
+</div>
+
+<section>
+<div class="container">
+<div class="section-heading reveal">
+<div class="eyebrow">CRO Operating System</div>
+<h2>Observe first. Optimise with evidence.</h2>
+<p>
+          The CRO operating system connects business objectives, behavioural evidence, hypotheses,
+          experimentation, implementation and measurement into one repeatable loop.
+        </p>
+</div>
+
+<div class="flow reveal">
+        UNDERSTAND → OBSERVE → DIAGNOSE → HYPOTHESISE → EXPERIMENT → IMPLEMENT → MEASURE → LEARN → ITERATE
+      </div>
+
+<div class="rules" style="margin-top:18px;">
+<article class="rule reveal">
+<h3>Evidence-led CRO</h3>
+<p>Behavioural and funnel signals guide optimisation instead of opinion alone.</p>
+</article>
+
+<article class="rule reveal">
+<h3>Full-Funnel Thinking</h3>
+<p>Acquisition, landing experience, registration and activation are treated as one journey.</p>
+</article>
+
+<article class="rule reveal">
+<h3>Mobile-First Optimisation</h3>
+<p>Mobile behaviour is considered part of the core conversion experience.</p>
+</article>
+
+<article class="rule reveal">
+<h3>Experimentation</h3>
+<p>Changes are tested, compared and used to inform the next hypothesis.</p>
+</article>
+
+<article class="rule reveal">
+<h3>Cross-Functional Execution</h3>
+<p>CRO direction is translated into implementation with development support where required.</p>
+</article>
+
+<article class="rule reveal">
+<h3>Friction Reduction</h3>
+<p>The focus remains on making the next meaningful action easier for the user.</p>
+</article>
+</div>
+
+<p class="scope-note reveal">
+        Portfolio Scope: CRO results and examples shown here are based on available platform records and documented
+        work from my experience at MNF.ai. Historical platform access is not available for all campaigns and periods.
+        The 10.5K+ registration figure and associated CRO observations are based on available records; the 60%+ figure
+        represents an observed distribution of registrations after CRO work, not an isolated causal attribution to CRO.
+        Figures are rounded/approximate based on available data.
+      </p>
+</div>
+</section>
+
+<section class="cta">
+<div class="container reveal">
+<div class="eyebrow">Performance Marketing Playbook 05</div>
+<h2>Optimise what happens after the click.</h2>
+<p>
+        Explore how I connect behavioural evidence, funnel analysis, experimentation and UX direction
+        to reduce friction and improve conversion journeys.
+      </p>
+<div class="buttons">
+<a class="button primary" href="https://monkissilent.github.io/">← Back to Portfolio</a>
+<a class="button" href="https://monkissilent.github.io/#playbooks">
+          View All Playbooks →
+        </a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container footer-inner">
+<span>© 2026 Vineeth Chaini</span>
+<span>Performance Marketing · Growth · Analytics</span>
+</div>
+</footer>
+
+<script>
+    const elements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body></html>
